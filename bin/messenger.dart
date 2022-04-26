@@ -38,15 +38,18 @@ void main(List<String> arguments) async {
   // print(response);
 
   writeln("Messenger\n");
-  write("write msg: ");
-  String msg = read();
-
-  // User user = User(name: name, phone: phone);
-  String response = await NetworkService.POST(
-    NetworkService.apiUsers + "/1" + NetworkService.apiContacts + "/1" + NetworkService.apiMessages,
-    NetworkService.headers,
-    {"from_me": true, "content": msg, "contactId": "1"},
-  );
+  // write("write msg: ");
+  // String msg = read();
+  //
+  // // User user = User(name: name, phone: phone);
+  // String response = await NetworkService.POST(
+  //   NetworkService.apiUsers + "/1" + NetworkService.apiContacts + "/1" + NetworkService.apiMessages,
+  //   NetworkService.headers,
+  //   {"from_me": true, "content": msg, "contactId": "1"},
+  // );
+  String response = await NetworkService.GET(
+    NetworkService.apiUsers + "/2" + NetworkService.apiContacts + "/1" + NetworkService.apiMessages,
+    NetworkService.headers);
 
   print(response);
 }
