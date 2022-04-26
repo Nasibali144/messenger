@@ -20,20 +20,33 @@ void main(List<String> arguments) async {
   // );
   // print(response);
 
+  // writeln("Messenger\n");
+  // writeln("Add Contact");
+  //
+  // write("phone: ");
+  // String phone = read();
+  //
+  // write("name: ");
+  // String name = read();
+  //
+  // // User user = User(name: name, phone: phone);
+  // String response = await NetworkService.POST(
+  //   NetworkService.apiUsers + "/2" + NetworkService.apiContacts,
+  //   NetworkService.headers,
+  //   {"name": name, "phone": phone},
+  // );
+  // print(response);
+
   writeln("Messenger\n");
-  writeln("Add Contact");
-
-  write("phone: ");
-  String phone = read();
-
-  write("name: ");
-  String name = read();
+  write("write msg: ");
+  String msg = read();
 
   // User user = User(name: name, phone: phone);
   String response = await NetworkService.POST(
-    NetworkService.apiUsers + "/2" + NetworkService.apiContacts,
+    NetworkService.apiUsers + "/1" + NetworkService.apiContacts + "/1" + NetworkService.apiMessages,
     NetworkService.headers,
-    {"name": name, "phone": phone},
+    {"from_me": true, "content": msg, "contactId": "1"},
   );
+
   print(response);
 }
