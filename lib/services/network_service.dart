@@ -12,6 +12,7 @@ class NetworkService {
 
   // APIS
   static const String apiUsers = "/tg/api/v1/users";
+  static const String apiContacts = "/contacts";
 
   // METHODS
   static Future<String> GET(String api, Map<String, String> headers) async{
